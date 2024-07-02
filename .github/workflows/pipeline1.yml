@@ -30,6 +30,6 @@ jobs:
       - name: Deploy to Netlify
         run: |
           netlify deploy --prod \
-            --dir=. \
+            --dir=project1 \
             --site ${{ secrets.NELIFY_SITE_ID }} \
             --auth ${{ secrets.NELIFY_API_TOKEN }}
