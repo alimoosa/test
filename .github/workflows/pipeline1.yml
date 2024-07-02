@@ -1,9 +1,9 @@
-name: Node JS build
+name: project 1
 
-#on:
-#push:
-#   branches:
-#     - main
+on:
+  push:
+    paths:
+      - project1/**
 
 jobs:
   build:
