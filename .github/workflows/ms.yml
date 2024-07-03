@@ -1,0 +1,17 @@
+name: Node JS build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploymentJob:
+    name: Deploy to Win Server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 Checkout
+        uses: actions/checkout@v4
+
+      - name: Copy to Windows Server
+        run: sshpass -p ${{ secrets.MS_PASS }} scp alimoosa.html ${{ secrets.MS_USER }}@${{ secrets.MS_IP }}:'C:\inetpub\wwwroot\' -o StrictHostKeyChecking=no
